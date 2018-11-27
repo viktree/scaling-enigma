@@ -1,0 +1,19 @@
+
+
+allocatePageFraction(amount)
+    "calc(100% / 12 * %s)" % amount
+
+.grid
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif
+  @media (min-width: 640px)
+    display: flex;
+    flex-direction: row;
+    > *
+      &:nth-child(1)
+
+        width: allocatePageFraction(3)
+      &:nth-child(2)
+        width: allocatePageFraction(9)
+
+.main
+    padding: 2rem

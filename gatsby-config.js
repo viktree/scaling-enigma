@@ -36,6 +36,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-stylus`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
