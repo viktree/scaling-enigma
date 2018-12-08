@@ -1,5 +1,12 @@
 
 
+/**
+ * Set site colours
+ */
+$background-white=  #e1e2e1
+
+html,body { height:100%; }
+
 allocatePageFraction(amount)
     "calc(100% / 12 * %s)" % amount
 
@@ -10,10 +17,15 @@ allocatePageFraction(amount)
     flex-direction: row;
     > *
       &:nth-child(1)
-
         width: allocatePageFraction(3)
       &:nth-child(2)
         width: allocatePageFraction(9)
 
 .main
-    padding: 2rem
+  background-color: $background-white
+  padding: 5rem
+
+.link
+  box-shadow: 'none'
+  text-decoration: 'none'
+  color: 'inherit'
