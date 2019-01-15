@@ -3,7 +3,7 @@ import React from 'react'
 export default () => {
   return (
     <svg version="1.0" className="sidebar-logo" viewBox="0 0 800.00 200.000000">
-      <g transform="translate(0,180) scale(0.1,-0.1)" stroke="none">
+      <g transform="translate(0,180) scale(0.09,-0.09)" stroke="none">
         <path
           d="M1959 1520 c-61 -8 -82 -16 -74 -31 3 -5 2 -24 -3 -43 -7 -24 -6 -38
 1 -45 9 -9 9 -14 1 -19 -10 -7 -55 -118 -84 -211 -13 -41 -13 -44 8 -62 17

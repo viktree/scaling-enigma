@@ -4,9 +4,11 @@ import './Layout.styl'
 
 const Layout = ({ children }) => {
   return (
-    <div className="grid">
-      <Sidebar />
-      <div className="main">{children}</div>
+    <div>
+      <div className="sidebar">
+        <Sidebar />
+      </div>
+      <div className="content">{children}</div>
     </div>
   )
 }

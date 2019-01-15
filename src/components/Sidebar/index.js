@@ -3,15 +3,15 @@ import Toronto from './toronto'
 import Logo from './logo'
 import './Sidebar.styl'
 
-const Sidebar = props => {
+const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="sidebar-container">
       <Toronto />
-      <div className="sidebar-container">
+      <div className="sidebar-main">
         <Logo />
         <div className="sidebar-description">
-          This is Vikram's personal blog. He is a computer science student @UofT
-          who is currently working as a full-stack developer @ecobee.
+          is the name of Vikram's site. I am a computer science student studying
+          at @UofT, who is working as a full-stack developer @ecobee.
         </div>
       </div>
     </div>

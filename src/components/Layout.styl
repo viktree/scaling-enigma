@@ -1,29 +1,36 @@
-
-
 /**
  * Set site colours
  */
 $background-white=  #e1e2e1
 
-html,body { height:100%; }
+$large-screen-threshold= 1000 px
 
-allocatePageFraction(amount)
+
+html, body
+  margin: 0
+  height:100%
+  background-color: $background-white
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif
+
+.sidebar, .content
+  height: 100vh
+
+.content
+  padding: 5%
+
+@media (min-width: $large-screen-threshold)
+  allocatePageFraction(amount)
     "calc(100% / 12 * %s)" % amount
 
-.grid
-  font-family: 'PT Sans', Helvetica, Arial, sans-serif
-  @media (min-width: 640px)
-    display: flex;
-    flex-direction: row;
-    > *
-      &:nth-child(1)
-        width: allocatePageFraction(3)
-      &:nth-child(2)
-        width: allocatePageFraction(9)
+  $size-of-sidebar=3
 
-.main
-  background-color: $background-white
-  padding: 5rem
+  .sidebar
+    position: fixed
+    width:allocatePageFraction($size-of-sidebar)
+
+  .content
+    margin-left: allocatePageFraction($size-of-sidebar)
+    width: allocatePageFraction(11 - $size-of-sidebar)
 
 .link
   box-shadow: 'none'
