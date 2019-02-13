@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
+import { path } from 'ramda'
 
 import Layout from '../components/Layout'
 
@@ -36,7 +36,7 @@ const Navigator = ({ nextPost, previousPost }) => {
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const { title, date } = post.frontmatter
-  const siteTitle = get(data, 'site.siteMetadata.title')
+  const siteTitle = path(['site', 'siteMetadata', 'title'], data)
   const { previous, next } = pageContext
 
   return (

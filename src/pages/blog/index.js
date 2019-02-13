@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
+import { path } from 'ramda'
 
 import Layout from '../../components/Layout'
 
 const ShowPost = ({ node }) => {
-  const title = get(node, 'frontmatter.title') || node.fields.slug
+  const title = path(['frontmatter', 'title'], node) || node.fields.slug
   return (
     <div key={node.fields.slug}>
       <h3>
@@ -20,8 +20,8 @@ const ShowPost = ({ node }) => {
 }
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = get(data, 'site.siteMetadata.title')
-  const posts = get(data, 'allMarkdownRemark.edges')
+  const siteTitle = path(['site', 'siteMetadata', 'title'], data)
+  const posts = path(['allMarkdownRemark', 'edges'], data)
 
   return (
     <Layout location={location} title={siteTitle}>

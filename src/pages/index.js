@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import get from 'lodash/get'
+import { path } from 'ramda'
 
 import Layout from '../components/Layout'
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = get(data, 'site.siteMetadata.title')
+  const siteTitle = path(['site', 'siteMetadata', 'title'], data)
 
   return (
     <Layout location={location} title={siteTitle}>
