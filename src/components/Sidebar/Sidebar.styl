@@ -5,11 +5,13 @@
 $sidebar-primary = #263238
 $sidebar-secondary=  #e1e2e1
 $sidebar-bright = #ffffff
+$sidebar-bleed-blue = #0086b3
+$sidebar-bleed-green = #5bbd76
 
 .sidebar-container
   background-color: $sidebar-primary
   color: $sidebar-secondary
-  height: 100%;
+  height: 93%;
   text-decoration: none
 
   .sidebar-main
@@ -19,16 +21,21 @@ $sidebar-bright = #ffffff
 
   .sidebar-description
     color: $sidebar-secondary
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif
     opacity: 0.75
-    padding-top: 15%
-    padding-bottom: 15%
     padding-left: 10%
     padding-right: 10%
 
   a
+    opacity: 1
     color: $sidebar-secondary
     font-weight: bold
     text-decoration: none
+
+  .sidebar-uoft-link:hover
+    color: $sidebar-bleed-blue
+  .sidebar-ecobee:hover
+    color: $sidebar-bleed-green
 
   .sidebar-toronto
     background-color: $sidebar-secondary
@@ -36,8 +43,9 @@ $sidebar-bright = #ffffff
     transform: scaleX(-1)
     width: 100%
 
-  .sidebar-logo
-    fill: $sidebar-secondary
-    padding: 5%
-    margin-bottom: -15%
-    margin-top: -10%
+  .sidebar-logo-container
+    text-align: right
+    margin-right: 10%
+    margin-left: 10%
+    .sidebar-logo
+      fill: $sidebar-secondary

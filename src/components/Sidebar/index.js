@@ -8,11 +8,28 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <Toronto />
       <div className="sidebar-main">
-        <Logo />
-        <div className="sidebar-description">
-          is the name of Vikram's site. I am a computer science student studying
-          at @UofT, who is working as a full-stack developer @ecobee.
+        <div className="sidebar-logo-container">
+          <Logo />
+          .netlify.com
         </div>
+        <br />
+        <div className="sidebar-description">
+          Welcome to this little portion of the internet that I am carving out
+          for myself!
+          <br />
+          <br />
+          My name is Vikram. I&#39;m computer science student{' '}
+          <a href="https://www.utoronto.ca/" className="sidebar-uoft-link">
+            @UofT
+          </a>{' '}
+          and an API developer{' '}
+          <a href="https://ecobee.com" className="sidebar-ecobee">
+            @ecobee
+          </a>
+          .
+        </div>
+        <br />
+        {/* <div>{sidebarItems.map(SidebarLink)}</div> */}
       </div>
     </div>
   )

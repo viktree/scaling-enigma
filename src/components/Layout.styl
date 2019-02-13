@@ -3,7 +3,7 @@
  */
 $background-white=  #e1e2e1
 
-$large-screen-threshold= 1000 px
+$large-screen-threshold= 480 px
 
 
 html, body
@@ -26,11 +26,14 @@ html, body
 
   .sidebar
     position: fixed
+    padding: 2%
     width:allocatePageFraction($size-of-sidebar)
 
   .content
     margin-left: allocatePageFraction($size-of-sidebar)
     width: allocatePageFraction(11 - $size-of-sidebar)
+    padding: 5%
+    padding-top: 0.5%
 
 .link
   box-shadow: 'none'
