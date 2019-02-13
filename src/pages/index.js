@@ -10,6 +10,8 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       Welcome to my site!
+      <br />
+      {'This page is under construction.'}
     </Layout>
   )
 }

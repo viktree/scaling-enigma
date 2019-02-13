@@ -1,33 +1,17 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { path } from 'ramda'
 
-import Layout from '../../components/Layout'
-
-const ShowPost = ({ node }) => {
-  const title = path(['frontmatter', 'title'], node) || node.fields.slug
-  return (
-    <div key={node.fields.slug}>
-      <h3>
-        <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-          {title}
-        </Link>
-      </h3>
-      <small>{node.frontmatter.date}</small>
-      <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-    </div>
-  )
-}
+import Layout from '../components/Layout'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = path(['site', 'siteMetadata', 'title'], data)
-  const posts = path(['allMarkdownRemark', 'edges'], data)
 
   return (
     <Layout location={location} title={siteTitle}>
-      <h1>Blog Posts</h1>
+      <h1>Projects Page</h1>
       <br />
-      {posts.map(ShowPost)}
+      {'This page is under construction.'}
     </Layout>
   )
 }
