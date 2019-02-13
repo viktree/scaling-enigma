@@ -4,7 +4,7 @@ import get from 'lodash/get'
 
 import Layout from '../components/Layout'
 
-const Navigator = ({ next, previous }) => {
+const Navigator = ({ nextPost, previousPost }) => {
   return (
     <ul
       style={{
@@ -16,16 +16,16 @@ const Navigator = ({ next, previous }) => {
       }}
     >
       <li>
-        {previous && (
-          <Link to={previous.fields.slug} rel="prev">
-            ← {previous.frontmatter.title}
+        {previousPost && (
+          <Link to={previousPost.fields.slug} rel="prev">
+            ← {previousPost.frontmatter.title}
           </Link>
         )}
       </li>
       <li>
-        {next && (
-          <Link to={next.fields.slug} rel="next">
-            {next.frontmatter.title} →
+        {nextPost && (
+          <Link to={nextPost.fields.slug} rel="next">
+            {nextPost.frontmatter.title} →
           </Link>
         )}
       </li>
@@ -33,26 +33,21 @@ const Navigator = ({ next, previous }) => {
   )
 }
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const { previous, next } = this.props.pageContext
+const BlogPostTemplate = ({ data, pageContext, location }) => {
+  const post = data.markdownRemark
+  const { title, date } = post.frontmatter
+  const siteTitle = get(data, 'site.siteMetadata.title')
+  const { previous, next } = pageContext
 
-    return (
-      <Layout
-        location={this.props.location}
-        title={siteTitle}
-        style={{ height: '100%' }}
-      >
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <Navigator next={next} previous={previous} />
-      </Layout>
-    )
-  }
+  return (
+    <Layout location={location} title={siteTitle} style={{ height: '100%' }}>
+      <h1>{title}</h1>
+      <p>{date}</p>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <hr />
+      <Navigator nextPost={next} previousPost={previous} />
+    </Layout>
+  )
 }
 
 export default BlogPostTemplate
