@@ -33,6 +33,11 @@ const Sidebar = () => {
       path: '/projects/',
     },
     {
+      id: 'resume',
+      name: 'Resume',
+      path: '/resume/',
+    },
+    {
       id: 'contact',
       name: 'Get In Touch!',
       path: '/contact/',
@@ -42,11 +47,11 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <Toronto />
       <div className="sidebar-main">
-        <div className="sidebar-logo-container" onClick={() => navigate('/')}>
+        {/* <div className="sidebar-logo-container" onClick={() => navigate('/')}>
           <Logo />
           .netlify.com
         </div>
-        <br />
+        <br /> */}
         <div className="sidebar-description">
           Welcome to this little portion of the internet that I am carving out
           for myself!
@@ -63,7 +68,8 @@ const Sidebar = () => {
           .
         </div>
         <br />
-        {sidebarItems.map(SidebarLink)}
+        <br />
+        <br />
       </div>
     </div>
   )

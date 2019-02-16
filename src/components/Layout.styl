@@ -1,7 +1,7 @@
 /**
  * Set site colours
  */
-$background-white=  #e1e2e1
+$background-white=  #DCE0D9
 
 $large-screen-threshold= 480 px
 
@@ -30,10 +30,18 @@ html, body
     width:allocatePageFraction($size-of-sidebar)
 
   .content
+    position: relative
+    height: 80%
     margin-left: allocatePageFraction($size-of-sidebar)
     width: allocatePageFraction(11 - $size-of-sidebar)
     padding: 5%
     padding-top: 0.5%
+
+
+    .bottom-space
+      position absolute
+      height: 20%
+      padding-bottom: 5%
 
 .link
   box-shadow: 'none'
