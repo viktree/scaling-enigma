@@ -47,11 +47,7 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <Toronto />
       <div className="sidebar-main">
-        {/* <div className="sidebar-logo-container" onClick={() => navigate('/')}>
-          <Logo />
-          .netlify.com
-        </div>
-        <br /> */}
+        <br />
         <div className="sidebar-description">
           Welcome to this little portion of the internet that I am carving out
           for myself!
@@ -67,9 +63,8 @@ const Sidebar = () => {
           </a>
           .
         </div>
-        <br />
-        <br />
-        <br />
+        <br/>
+        {sidebarItems.map(SidebarLink)}
       </div>
     </div>
   )
