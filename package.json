@@ -44,7 +44,7 @@
     "url": "git+https://github.com/viktree/scaling-enigma.git"
   },
   "scripts": {
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "format": "prettier --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
     "start": "yarn develop",
