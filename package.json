@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "scaling-enigma",
   "description": "Starter Gatsby Blog",
   "version": "1.0.0",
   "author": "Vikram Venkataramanan <vikram.venkataramanan@mail.utoronto.ca>",
@@ -20,6 +20,7 @@
     "gatsby-source-filesystem": "^2.0.2",
     "gatsby-transformer-remark": "^2.1.6",
     "gatsby-transformer-sharp": "^2.1.3",
+    "husky": "^1.3.1",
     "prismjs": "^1.15.0",
     "ramda": "^0.26.1",
     "react": "^16.8.1",
@@ -27,12 +28,12 @@
   },
   "devDependencies": {
     "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react": "^7.12.4",
     "gh-pages": "^1.2.0",
     "prettier": "^1.14.2",
     "react-bootstrap": "^0.32.4"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/viktree/scaling-enigma#readme",
   "keywords": [
     "gatsby"
   ],
@@ -40,17 +41,14 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/viktree/scaling-enigma.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
+    "format": "prettier --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }
