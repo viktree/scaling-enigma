@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { path } from 'ramda'
-
 import Layout from '../components/Layout'
 
 const BlogIndex = ({ data, location }) => {
@@ -20,6 +19,12 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

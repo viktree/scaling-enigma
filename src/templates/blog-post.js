@@ -4,38 +4,32 @@ import { path } from 'ramda'
 
 import Layout from '../components/Layout'
 
-const Navigator = ({ nextPost, previousPost }) => {
-  return (
-    <ul
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        listStyle: 'none',
-        padding: 0,
-      }}
-    >
-      <li>
-        {previousPost && (
-          <Link to={previousPost.fields.slug} rel="prev">
-            ← {previousPost.frontmatter.title}
-          </Link>
-        )}
-      </li>
-      <li>
-        {nextPost && (
-          <Link to={nextPost.fields.slug} rel="next">
-            {nextPost.frontmatter.title} →
-          </Link>
-        )}
-      </li>
-    </ul>
-  )
-}
+const getPostTitle = post => path(['frontmatter', 'title'], post)
+const getPostLink = post => path(['fields', 'slug'], post)
+
+const Navigator = ({ nextPost, previousPost }) => (
+  <ul style={pageStyle}>
+    <li>
+      {previousPost && (
+        <Link to={getPostLink(previousPost)} rel="prev">
+          ← {getPostTitle(previousPost)}
+        </Link>
+      )}
+    </li>
+    <li>
+      {nextPost && (
+        <Link to={getPostLink(nextPost)} rel="next">
+          {getPostTitle(nextPost)} →
+        </Link>
+      )}
+    </li>
+  </ul>
+)
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const { title, date } = post.frontmatter
+  const post = path(['markdownRemark', 'frontmatter'], data)
+  const title = path(['title'], post)
+  const date = path(['date'], post)
   const siteTitle = path(['site', 'siteMetadata', 'title'], data)
   const { previous, next } = pageContext
 
@@ -71,3 +65,11 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const pageStyle = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
+  listStyle: 'none',
+  padding: 0,
+}
