@@ -1,19 +1,18 @@
 import React, { useState } from 'react'
 import { navigate } from 'gatsby-link'
 
+import './Form.styl'
+
 const encode = data =>
   Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 
 const Contact = () => {
-  const initialFormState = { id: null, name: '', email: '', message: '' }
-  const [user, setUser] = useState(initialFormState)
-
-  const handleFormInput = event => {
-    const { name, value } = event.target
-    setUser({ ...user, [name]: value })
-  }
+  const [id, setId] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleSubmit = async event => {
     try {
@@ -21,7 +20,10 @@ const Contact = () => {
       const form = event.target
       const body = {
         'form-name': form.getAttribute('name'),
-        ...user,
+        id,
+        name,
+        email,
+        message,
       }
       await fetch('/', {
         method: 'POST',
@@ -49,28 +51,42 @@ const Contact = () => {
         <p hidden>
           <label>
             Don’t fill this out:{' '}
-            <input name="bot-field" onChange={handleFormInput} />
+            <input
+              name="bot-field"
+              onChange={event => setId(event.target.value)}
+            />
           </label>
         </p>
         <p>
           <label>
             Your name:
             <br />
-            <input type="text" name="name" onChange={handleFormInput} />
+            <input
+              type="text"
+              name="name"
+              onChange={event => setName(event.target.value)}
+            />
           </label>
         </p>
         <p>
           <label>
             Your email:
             <br />
-            <input type="email" name="email" onChange={handleFormInput} />
+            <input
+              type="email"
+              name="email"
+              onChange={event => setEmail(event.target.value)}
+            />
           </label>
         </p>
         <p>
           <label>
             Message:
             <br />
-            <textarea name="message" onChange={handleFormInput} />
+            <textarea
+              name="message"
+              onChange={event => setMessage(event.target.vale)}
+            />
           </label>
         </p>
         <p>
