@@ -27,14 +27,14 @@ const Navigator = ({ nextPost, previousPost }) => (
 )
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = path(['markdownRemark', 'frontmatter'], data)
-  const title = path(['title'], post)
-  const date = path(['date'], post)
+  const post = path(['markdownRemark'], data)
+  const title = path(['frontmatter', 'title'], post)
+  const date = path(['frontmatter', 'date'], post)
   const siteTitle = path(['site', 'siteMetadata', 'title'], data)
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle} style={{ height: '100%' }}>
+    <Layout location={location} title={siteTitle}>
       <h1>{title}</h1>
       <p>{date}</p>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
