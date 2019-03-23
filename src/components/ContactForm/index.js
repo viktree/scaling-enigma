@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { navigate } from 'gatsby-link'
 
-import './Form.styl'
+import './ContactForm.styl'
 
 const encode = data =>
   Object.keys(data)
@@ -85,7 +85,7 @@ const Contact = () => {
             <br />
             <textarea
               name="message"
-              onChange={event => setMessage(event.target.vale)}
+              onChange={event => setMessage(event.target.value)}
             />
           </label>
         </p>

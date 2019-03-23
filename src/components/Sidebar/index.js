@@ -2,9 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby-link'
 
 import Toronto from './toronto'
-// import Logo from './logo'
 import './Sidebar.styl'
-// import { isAbsolute } from 'path'
 
 const SidebarLink = ({ id, name, path }) => {
   const handleClick = () => navigate(path)
