@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 import { Link, graphql } from 'gatsby'
 import { path } from 'ramda'
 
@@ -6,6 +7,8 @@ import Layout from '../../components/Layout'
 
 const ShowPost = ({ node }) => {
   const title = path(['frontmatter', 'title'], node) || node.fields.slug
+  const date = path(['frontmatter', 'date'], node)
+  const formattedDate = moment(date).format('MMMM YYYY')
   return (
     <div key={node.fields.slug}>
       <h3>
@@ -13,8 +16,9 @@ const ShowPost = ({ node }) => {
           {title}
         </Link>
       </h3>
-      <small>{node.frontmatter.date}</small>
+      <small style={{ textTransform: 'uppercase' }}>{formattedDate}</small>
       <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+      <br />
     </div>
   )
 }

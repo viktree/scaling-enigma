@@ -19,11 +19,11 @@ const sidebarItems = [
   //   name: 'About Me',
   //   path: '/about/',
   // },
-  // {
-  //   id: 'blog',
-  //   name: 'Blog',
-  //   path: '/blog/',
-  // },
+  {
+    id: 'blog',
+    name: 'Blog',
+    path: '/blog/',
+  },
   // {
   //   id: 'projects',
   //   name: 'Projects',
@@ -36,7 +36,7 @@ const sidebarItems = [
   // },
   {
     id: 'contact',
-    name: 'Get In Touch!',
+    name: 'Contact',
     path: '/contact/',
   },
 ]
@@ -45,7 +45,6 @@ const Sidebar = () => (
   <div className="sidebar-container">
     <Toronto />
     <div className="sidebar-main">
-      <br />
       <div className="sidebar-description">
         Welcome to this little portion of the internet that I am carving out for
         myself!

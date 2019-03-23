@@ -2,46 +2,45 @@
 /**
  * Set site colours
  */
-$sidebar-primary = #263238
-$sidebar-secondary= #e1e2e1
-$sidebar-bright = #ffffff
-$sidebar-bleed-blue = #0086b3
-$sidebar-bleed-green = #5bbd76
+$main-blue = #263238
+$accent-white= #e1e2e1
+$full-white = #ffffff
+$bleed-blue = #0086b3
+$bleed-green = #5bbd76
 
 .sidebar-container
   font-family: 'Bitter', serif
-  background-color: $sidebar-primary
-  color: $sidebar-secondary
+  background-color: $main-blue
+  color: $accent-white
   height: 93%;
   text-decoration: none
 
   .sidebar-main
     padding-left: 1%
     padding-right: 1%
-    padding-top: 10%
+    // padding-top: 10%
     width: 100%
 
   .sidebar-description
-    color: $sidebar-secondary
-    font-size: 80%
+    color: $accent-white
     opacity: 0.75
     padding-left: 10%
     padding-right: 10%
 
   a
     opacity: 1
-    color: $sidebar-bright
+    color: $full-white
     font-weight: bold
     text-decoration: none
 
   .sidebar-uoft-link:hover
-    color: $sidebar-bleed-blue
+    color: $bleed-blue
   .sidebar-ecobee:hover
-    color: $sidebar-bleed-green
+    color: $bleed-green
 
   .sidebar-toronto
-    background-color: $sidebar-secondary
-    fill: $sidebar-primary
+    background-color: $accent-white
+    fill: $main-blue
     transform: scaleX(-1)
     width: 100%
 
@@ -50,7 +49,7 @@ $sidebar-bleed-green = #5bbd76
     margin-right: 10%
     margin-left: 10%
     .sidebar-logo
-      fill: $sidebar-secondary
+      fill: $accent-white
 
   .sidebar-page-links
     padding-top: 2%

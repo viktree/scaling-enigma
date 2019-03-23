@@ -3,14 +3,20 @@ import { graphql } from 'gatsby'
 import { path } from 'ramda'
 import Layout from '../components/Layout'
 
+const Landing = () => (
+  <div className="landing-container">
+    Welcome to my site!
+    <br />
+    {'This page is under construction.'}
+  </div>
+)
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = path(['site', 'siteMetadata', 'title'], data)
 
   return (
     <Layout location={location} title={siteTitle}>
-      Welcome to my site!
-      <br />
-      {'This page is under construction.'}
+      <Landing />
     </Layout>
   )
 }
