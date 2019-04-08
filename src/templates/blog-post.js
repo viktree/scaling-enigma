@@ -8,7 +8,7 @@ import Layout from '../components/Layout'
 
 import './BlogPost.styl'
 
-// eslint-disable-next
+// eslint-disable-next-line no-undef
 const { DISQUS_SHORT_NAME } = process.env
 
 const getPostTitle = post => path(['frontmatter', 'title'], post)
