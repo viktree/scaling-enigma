@@ -39,7 +39,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div>
+      <div style={{ paddingLeft: '12%' }}>
         <h1>{title}</h1>
         <p>{formattedDate}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

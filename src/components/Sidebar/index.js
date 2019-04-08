@@ -14,11 +14,11 @@ const SidebarLink = ({ id, name, path }) => {
 }
 
 const sidebarItems = [
-  // {
-  //   id: 'about',
-  //   name: 'About Me',
-  //   path: '/about/',
-  // },
+  {
+    id: 'about',
+    name: 'About Me',
+    path: '/about/',
+  },
   {
     id: 'blog',
     name: 'Blog',
@@ -41,7 +41,7 @@ const sidebarItems = [
   },
 ]
 
-const Sidebar = () => (
+const Sidebar = ({ ignoreNav }) => (
   <div className="sidebar-container">
     <Toronto />
     <div className="sidebar-main">
@@ -55,13 +55,21 @@ const Sidebar = () => (
           @UofT
         </a>{' '}
         and an API developer{' '}
-        <a href="https://ecobee.com" className="sidebar-ecobee">
+        <a href="https://ecobee.com" className="sidebar-ecobee-link">
           @ecobee
         </a>
         .
       </div>
       <br />
-      {sidebarItems.map(SidebarLink)}
+      <br />
+      {ignoreNav ? '' : sidebarItems.map(SidebarLink)}
+      <a
+        key="resume"
+        className="sidebar-page-links"
+        href="https://ucc43dc4127b02bbaec05e087ecb.dl.dropboxusercontent.com/cd/0/get/Aekr8aIe-4mRVUF-28le-bAdZZm-FuJKZHBx0NZQI89oI8QzqlQMboRdD-jwTCed-ailKQn712ekZDvwW1f647bUpuRdAdwFKWXRJtCd-lvgPEHgGod8pmDP8nPMe5eEqks/file?dl=1#"
+      >
+        Resume
+      </a>
     </div>
   </div>
 )

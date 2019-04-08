@@ -3,15 +3,17 @@ import { graphql } from 'gatsby'
 import { path } from 'ramda'
 
 import Layout from '../components/Layout'
+import Timeline from '../components/Timeline'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = path(['site', 'siteMetadata', 'title'], data)
 
   return (
     <Layout location={location} title={siteTitle}>
-      <h1>About Page</h1>
+      <h1>This is me!</h1>
+      Here are a list of places I have worked for or studied at.
       <br />
-      {'This page is under construction.'}
+      <Timeline />
     </Layout>
   )
 }
