@@ -13,6 +13,16 @@ const SidebarLink = ({ id, name, path }) => {
   )
 }
 
+const ResumeLink = () => (
+  <a
+    key="resume"
+    className="sidebar-page-links"
+    href="https://ucc43dc4127b02bbaec05e087ecb.dl.dropboxusercontent.com/cd/0/get/Aekr8aIe-4mRVUF-28le-bAdZZm-FuJKZHBx0NZQI89oI8QzqlQMboRdD-jwTCed-ailKQn712ekZDvwW1f647bUpuRdAdwFKWXRJtCd-lvgPEHgGod8pmDP8nPMe5eEqks/file?dl=1#"
+  >
+    Resume
+  </a>
+)
+
 const sidebarItems = [
   {
     id: 'about',
@@ -63,13 +73,7 @@ const Sidebar = ({ ignoreNav }) => (
       <br />
       <br />
       {ignoreNav ? '' : sidebarItems.map(SidebarLink)}
-      <a
-        key="resume"
-        className="sidebar-page-links"
-        href="https://ucc43dc4127b02bbaec05e087ecb.dl.dropboxusercontent.com/cd/0/get/Aekr8aIe-4mRVUF-28le-bAdZZm-FuJKZHBx0NZQI89oI8QzqlQMboRdD-jwTCed-ailKQn712ekZDvwW1f647bUpuRdAdwFKWXRJtCd-lvgPEHgGod8pmDP8nPMe5eEqks/file?dl=1#"
-      >
-        Resume
-      </a>
+      {ignoreNav ? '' : ResumeLink}
     </div>
   </div>
 )

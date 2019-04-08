@@ -2,10 +2,14 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import moment from 'moment'
 import { path } from 'ramda'
+import { DiscussionEmbed } from 'disqus-react'
 
 import Layout from '../components/Layout'
 
 import './BlogPost.styl'
+
+// eslint-disable-next
+const { DISQUS_SHORT_NAME } = process.env
 
 const getPostTitle = post => path(['frontmatter', 'title'], post)
 const getPostLink = post => path(['fields', 'slug'], post)
@@ -36,6 +40,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const formattedDate = moment(date).format('MMMM D, YYYY')
   const siteTitle = path(['site', 'siteMetadata', 'title'], data)
   const { previous, next } = pageContext
+  const disqusConfig = {
+    identifier: post.id,
+    title,
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -45,6 +53,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <br />
         <Navigator nextPost={next} previousPost={previous} />
+        <DiscussionEmbed shortname={DISQUS_SHORT_NAME} config={disqusConfig} />
       </div>
     </Layout>
   )
