@@ -5,8 +5,8 @@ module.exports = {
     author: 'Vikram Venktaramanan',
     description: 'A starter blog demonstrating what Gatsby can do.',
     siteUrl: 'htt://viktree.netlify.com',
+    disqusShortname: process.env.GATSBY_DISQUS_SHORTNAME,
   },
-  pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -38,9 +38,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-stylus`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

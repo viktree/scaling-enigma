@@ -4,8 +4,6 @@ import { navigate } from 'gatsby-link'
 import Toronto from './toronto'
 import './Sidebar.styl'
 
-const {RESUME_LINK} = process.env
-
 const SidebarLink = ({ id, name, path }) => {
   const handleClick = () => navigate(path)
   return (
@@ -19,7 +17,7 @@ const ResumeLink = () => (
   <a
     key="resume"
     className="sidebar-page-links"
-    href={RESUME_LINK}
+    href="https://ucc43dc4127b02bbaec05e087ecb.dl.dropboxusercontent.com/cd/0/get/Aekr8aIe-4mRVUF-28le-bAdZZm-FuJKZHBx0NZQI89oI8QzqlQMboRdD-jwTCed-ailKQn712ekZDvwW1f647bUpuRdAdwFKWXRJtCd-lvgPEHgGod8pmDP8nPMe5eEqks/file?dl=1#"
   >
     Resume
   </a>
@@ -41,19 +39,12 @@ const sidebarItems = [
   //   name: 'Projects',
   //   path: '/projects/',
   // },
-  // {
-  //   id: 'resume',
-  //   name: 'Resume',
-  //   path: '/resume/',
-  // },
   {
     id: 'contact',
     name: 'Contact',
     path: '/contact/',
   },
 ]
-
-console.log('RESUME_LINK', RESUME_LINK)
 
 const Sidebar = ({ ignoreNav }) => (
   <div className="sidebar-container">
@@ -77,7 +68,7 @@ const Sidebar = ({ ignoreNav }) => (
       <br />
       <br />
       {ignoreNav ? '' : sidebarItems.map(SidebarLink)}
-      {ignoreNav ? '' : <ResumeLink/>}
+      {ignoreNav ? '' : <ResumeLink />}
     </div>
   </div>
 )

@@ -8,9 +8,6 @@ import Layout from '../components/Layout'
 
 import './BlogPost.styl'
 
-// eslint-disable-next-line no-undef
-const { DISQUS_SHORT_NAME } = process.env
-
 const getPostTitle = post => path(['frontmatter', 'title'], post)
 const getPostLink = post => path(['fields', 'slug'], post)
 
@@ -34,16 +31,19 @@ const Navigator = ({ nextPost, previousPost }) => (
 )
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
+  const metadata = path(['site', 'siteMetadata'], data)
+
   const post = path(['markdownRemark'], data)
   const title = path(['frontmatter', 'title'], post)
   const date = path(['frontmatter', 'date'], post)
   const formattedDate = moment(date).format('MMMM D, YYYY')
-  const siteTitle = path(['site', 'siteMetadata', 'title'], data)
+
   const { previous, next } = pageContext
-  const disqusConfig = {
-    identifier: post.id,
-    title,
-  }
+
+  const siteTitle = path(['title'], metadata)
+  const disqusShortname = path(['disqusShortname'], metadata)
+  const identifier = path(['id'], post)
+  const disqusConfig = { identifier, title }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -53,7 +53,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <br />
         <Navigator nextPost={next} previousPost={previous} />
-        <DiscussionEmbed shortname={DISQUS_SHORT_NAME} config={disqusConfig} />
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </div>
     </Layout>
   )
@@ -67,6 +67,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        disqusShortname
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

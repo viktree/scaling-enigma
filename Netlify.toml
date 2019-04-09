@@ -13,3 +13,6 @@ ID = "feb79b50-d537-4ab5-bd8d-32451b74a61a"
 
   # Default build command.
   command = "gatsby build"
+
+[build.environment]
+  GATSBY_DISQUS_SHORTNAME = "viktree-netlify-com"
