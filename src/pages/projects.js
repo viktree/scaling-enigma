@@ -20,6 +20,13 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        resources {
+          resumeLink
+        }
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

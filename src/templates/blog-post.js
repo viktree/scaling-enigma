@@ -32,6 +32,7 @@ const Navigator = ({ nextPost, previousPost }) => (
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const metadata = path(['site', 'siteMetadata'], data)
+  const resumeLink = path(['resources', 'resumeLink'], metadata)
 
   const post = path(['markdownRemark'], data)
   const title = path(['frontmatter', 'title'], post)
@@ -46,7 +47,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const disqusConfig = { identifier, title }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} resumeLink={resumeLink}>
       <div style={{ paddingLeft: '12%' }}>
         <h1>{title}</h1>
         <p>{formattedDate}</p>
@@ -68,6 +69,9 @@ export const pageQuery = graphql`
         title
         author
         disqusShortname
+        resources {
+          resumeLink
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

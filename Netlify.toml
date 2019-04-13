@@ -16,3 +16,4 @@ ID = "feb79b50-d537-4ab5-bd8d-32451b74a61a"
 
 [build.environment]
   GATSBY_DISQUS_SHORTNAME = "viktree-netlify-com"
+  GATSBY_RESUME_LINK = "hell"

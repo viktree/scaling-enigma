@@ -2,10 +2,10 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import './Layout.styl'
 
-const Layout = ({ children, ignoreNav }) => (
+const Layout = ({ children, ignoreNav, resumeLink }) => (
   <div>
     <div className="sidebar">
-      <Sidebar ignoreNav={ignoreNav} />
+      <Sidebar ignoreNav={ignoreNav} resumeLink={resumeLink} />
     </div>
     <div className="content">
       {children}

@@ -13,12 +13,8 @@ const SidebarLink = ({ id, name, path }) => {
   )
 }
 
-const ResumeLink = () => (
-  <a
-    key="resume"
-    className="sidebar-page-links"
-    href="https://ucc43dc4127b02bbaec05e087ecb.dl.dropboxusercontent.com/cd/0/get/Aekr8aIe-4mRVUF-28le-bAdZZm-FuJKZHBx0NZQI89oI8QzqlQMboRdD-jwTCed-ailKQn712ekZDvwW1f647bUpuRdAdwFKWXRJtCd-lvgPEHgGod8pmDP8nPMe5eEqks/file?dl=1#"
-  >
+const ResumeLink = ({ resumeLink }) => (
+  <a key="resume" className="sidebar-page-links" href={resumeLink}>
     Resume
   </a>
 )
@@ -46,7 +42,7 @@ const sidebarItems = [
   },
 ]
 
-const Sidebar = ({ ignoreNav }) => (
+const Sidebar = ({ ignoreNav, resumeLink }) => (
   <div className="sidebar-container">
     <Toronto />
     <div className="sidebar-main">
@@ -68,7 +64,7 @@ const Sidebar = ({ ignoreNav }) => (
       <br />
       <br />
       {ignoreNav ? '' : sidebarItems.map(SidebarLink)}
-      {ignoreNav ? '' : <ResumeLink />}
+      {ignoreNav ? '' : <ResumeLink resumeLink={resumeLink} />}
     </div>
   </div>
 )
