@@ -22,9 +22,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
-        resources {
-          resumeLink
-        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

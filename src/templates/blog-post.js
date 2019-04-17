@@ -1,38 +1,17 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import moment from 'moment'
 import { path } from 'ramda'
 import { DiscussionEmbed } from 'disqus-react'
 
+import PageContext from '../contexts'
 import Layout from '../components/Layout'
+import BlogPostNavigator from '../components/BlogPostNavigator'
 
 import './BlogPost.styl'
 
-const getPostTitle = post => path(['frontmatter', 'title'], post)
-const getPostLink = post => path(['fields', 'slug'], post)
-
-const Navigator = ({ nextPost, previousPost }) => (
-  <ul className="post-navigator">
-    <li>
-      {previousPost && (
-        <Link to={getPostLink(previousPost)} rel="prev" className="post-nav">
-          ← {getPostTitle(previousPost)}
-        </Link>
-      )}
-    </li>
-    <li>
-      {nextPost && (
-        <Link to={getPostLink(nextPost)} rel="next" className="post-nav">
-          {getPostTitle(nextPost)} →
-        </Link>
-      )}
-    </li>
-  </ul>
-)
-
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const metadata = path(['site', 'siteMetadata'], data)
-  const resumeLink = path(['resources', 'resumeLink'], metadata)
 
   const post = path(['markdownRemark'], data)
   const title = path(['frontmatter', 'title'], post)
@@ -47,16 +26,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const disqusConfig = { identifier, title }
 
   return (
-    <Layout location={location} title={siteTitle} resumeLink={resumeLink}>
-      <div style={{ paddingLeft: '12%' }}>
-        <h1>{title}</h1>
-        <p>{formattedDate}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <br />
-        <Navigator nextPost={next} previousPost={previous} />
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-      </div>
-    </Layout>
+    <PageContext.Provider value="dark">
+      <Layout location={location} title={siteTitle}>
+        <div style={{ paddingLeft: '12%' }}>
+          <h1>{title}</h1>
+          <p>{formattedDate}</p>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <br />
+          <BlogPostNavigator nextPost={next} previousPost={previous} />
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        </div>
+      </Layout>
+    </PageContext.Provider>
   )
 }
 
@@ -69,9 +50,6 @@ export const pageQuery = graphql`
         title
         author
         disqusShortname
-        resources {
-          resumeLink
-        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
