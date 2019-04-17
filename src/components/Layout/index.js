@@ -1,11 +1,12 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import Sidebar from '../Sidebar'
 import './Layout.styl'
 
-const Layout = ({ children, ignoreNav, resumeLink }) => (
+
+const Layout = ({ children, ignoreNav }) => (
   <div>
     <div className="sidebar">
-      <Sidebar ignoreNav={ignoreNav} resumeLink={resumeLink} />
+      <Sidebar ignoreNav={ignoreNav} />
     </div>
     <div className="content">
       {children}
