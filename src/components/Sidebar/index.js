@@ -4,6 +4,7 @@ import { path } from 'ramda'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Toronto from './toronto'
+import sidebarItems from './pageLinks'
 import './Sidebar.styl'
 
 const SidebarLink = ({ id, name, path }) => (
@@ -36,29 +37,6 @@ const ResumeLink = () => (
     }}
   />
 )
-
-const sidebarItems = [
-  {
-    id: 'about',
-    name: 'About Me',
-    path: '/about/',
-  },
-  {
-    id: 'blog',
-    name: 'Blog',
-    path: '/blog/',
-  },
-  // {
-  //   id: 'projects',
-  //   name: 'Projects',
-  //   path: '/projects/',
-  // },
-  {
-    id: 'contact',
-    name: 'Contact',
-    path: '/contact/',
-  },
-]
 
 const Sidebar = ({ ignoreNav }) => (
   <div className="sidebar-container">

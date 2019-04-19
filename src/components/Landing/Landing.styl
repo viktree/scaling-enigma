@@ -3,6 +3,11 @@
  * Set site colours
  */
 $main-blue = #263238
+$accent-white= #e1e2e1
+$full-white = #ffffff
+$bleed-blue = #0086b3
+$bleed-green = #5bbd76
+$bleed-red = #702021
 
 .landing-container
   font-variant: small-caps
@@ -10,8 +15,21 @@ $main-blue = #263238
   margin-right: -42%
   margin-top: 38%
   bottom: 58%
-  // background-color: red
+
   .landing-name
+    font-size:300%
     color: $main-blue
+
+  .landing-strip
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin: 10%
+    .landing-links
+      font-size:150%
+      color: $bleed-red
+
+    .landing-links:hover
+      color: $main-blue
 
 
