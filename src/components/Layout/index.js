@@ -1,10 +1,11 @@
-import React from 'react'
-import Sidebar from '../Sidebar'
 import './Layout.styl'
 
+import React from 'react'
+
+import Sidebar from '../Sidebar'
 
 const Layout = ({ children, ignoreNav }) => (
-  <div>
+  <div className="container">
     <div className="sidebar">
       <Sidebar ignoreNav={ignoreNav} />
     </div>

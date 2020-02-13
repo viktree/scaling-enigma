@@ -1,14 +1,14 @@
 const pageLinks = [
   {
-    id: 'about',
-    name: 'About Me',
-    path: '/me',
-  },
-  {
     id: 'blog',
     name: 'Blog',
     path: '/blog',
   },
+  // {
+  //   id: 'about',
+  //   name: 'About Me',
+  //   path: '/me',
+  // },
   // {
   //   id: 'projects',
   //   name: 'Projects',
@@ -16,7 +16,7 @@ const pageLinks = [
   // },
   {
     id: 'contact',
-    name: 'Contact',
+    name: 'Contact Me',
     path: '/contact',
   },
 ]
