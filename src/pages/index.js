@@ -1,15 +1,37 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import moment from 'moment'
+import { Link, graphql } from 'gatsby'
 import { path } from 'ramda'
+
 import Layout from '../components/Layout'
-import Landing from '../components/Landing'
+
+const ShowPost = ({ node }) => {
+  const title = path(['frontmatter', 'title'], node) || node.fields.slug
+  const date = path(['frontmatter', 'date'], node)
+  const formattedDate = moment(date).format('MMMM YYYY')
+  return (
+    <div key={node.fields.slug}>
+      <h3>
+        <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+          {title}
+        </Link>
+      </h3>
+      <small style={{ textTransform: 'uppercase' }}>{formattedDate}</small>
+      <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+      <br />
+    </div>
+  )
+}
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = path(['site', 'siteMetadata', 'title'], data)
+  const posts = path(['allMarkdownRemark', 'edges'], data)
 
   return (
-    <Layout location={location} title={siteTitle} ignoreNav={true}>
-      <Landing />
+    <Layout location={location} title={siteTitle}>
+      <h1>Blog Posts</h1>
+      <br />
+      {posts.map(ShowPost)}
     </Layout>
   )
 }
@@ -18,12 +40,6 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
