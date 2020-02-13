@@ -1,7 +1,7 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
-// import { path } from 'ramda'
-// import { StaticQuery, graphql } from 'gatsby'
+import { path } from 'ramda'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Toronto from './toronto'
 import sidebarItems from './pageLinks'
@@ -13,32 +13,34 @@ const SidebarLink = ({ id, name, path }) => (
   </div>
 )
 
-// const ResumeLink = () => (
-//   <StaticQuery
-//     query={graphql`
-//       query SidebarQuery {
-//         site {
-//           siteMetadata {
-//             resources {
-//               resumeLink
-//             }
-//           }
-//         }
-//       }
-//     `}
-//     render={data => {
-//       const metadata = path(['site', 'siteMetadata'], data)
-//       const resumeLink = path(['resources', 'resumeLink'], metadata)
-//       return (
-//         <a key="resume" className="sidebar-page-links" href={resumeLink}>
-//           Resume
-//         </a>
-//       )
-//     }}
-//   />
-// )
+const ResumeLink = () => (
+  <StaticQuery
+    query={graphql`
+      query SidebarQuery {
+        site {
+          siteMetadata {
+            resources {
+              resumeLink
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      const metadata = path(['site', 'siteMetadata'], data)
+      const resumeLink = path(['resources', 'resumeLink'], metadata)
+      return (
+        <div key="resume" className="sidebar-page-links">
+          <a className="sidebar-resume-link" href={resumeLink}>
+            Resume
+          </a>
+        </div>
+      )
+    }}
+  />
+)
 
-const Sidebar = ({ ignoreNav }) => (
+const Sidebar = () => (
   <div className="sidebar-container">
     <Toronto />
     <div className="sidebar-main">
@@ -60,12 +62,10 @@ const Sidebar = ({ ignoreNav }) => (
       </div>
       <br />
       <br />
-      {ignoreNav ? '' : sidebarItems.map(SidebarLink)}
+      <ResumeLink />
+      {sidebarItems.map(SidebarLink)}
     </div>
   </div>
 )
-
-// © All rights reserved.
-//      {ignoreNav ? '' : <ResumeLink />}
 
 export default Sidebar
