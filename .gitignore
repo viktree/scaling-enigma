@@ -72,3 +72,4 @@ yarn-error.log
 
 # IDE Specific
 .vscode
+src/pages/blog/affine-transformations/index.md

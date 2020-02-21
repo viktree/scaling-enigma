@@ -4,7 +4,7 @@ module.exports = {
     title: 'viktree',
     author: 'Vikram Venktaramanan',
     description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'htt://viktree.netlify.com',
+    siteUrl: process.env.GATSBY_SITE_URL,
     disqusShortname: process.env.GATSBY_DISQUS_SHORTNAME,
     resources: {
       resumeLink: process.env.GATSBY_RESUME_LINK,
@@ -34,8 +34,15 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`,
+            },
+          },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
+          'gatsby-remark-reading-time',
           'gatsby-remark-smartypants',
         ],
       },

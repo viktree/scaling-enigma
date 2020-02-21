@@ -8,6 +8,7 @@ import PageContext from '../contexts'
 import Layout from '../components/Layout'
 import BlogPostNavigator from '../components/BlogPostNavigator'
 
+import 'katex/dist/katex.min.css'
 import './BlogPost.styl'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -59,6 +60,11 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }
