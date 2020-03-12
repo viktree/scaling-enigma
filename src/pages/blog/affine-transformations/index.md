@@ -15,7 +15,7 @@ $$
 
 Linear algebra is a branch of math that focuses on the ways that we can manipulate our vectors using **linear transformations**. What makes linear transformations different from other mathematical operations is that we can represent them as a matrix. Here is a general template for how these transformations look - it’s an equation describing **matrix-vector multiplication** in two dimensions.
 
-$$ 
+$$
 A \cdot \vec{x} = \vec{b} 
 $$
 
@@ -26,7 +26,7 @@ a_{11} & a_{12} \\ a_{21} & a_{22}
 \begin{bmatrix} x \\ y \end{bmatrix}
 = 
 \underbrace{\begin{bmatrix}
-a_{11} x + a_{21} y \\ a_{12} x + a_{22} y
+a_{11} x + a_{12} y \\ a_{21} x + a_{22} y
 \end{bmatrix}}_{b \text{ = resulting point}}
 $$
 
@@ -109,10 +109,10 @@ $$
 \end{bmatrix}
 $$
 
-and now we can make use of the [trigonometric formulas for the sum of angles](http://mathworld.wolfram.com/TrigonometricAdditionFormulas.html)!
+And now we can make use of the [trigonometric formulas for the sum of angles](http://mathworld.wolfram.com/TrigonometricAdditionFormulas.html)!
 
 $$
-  \begin{bmatrix}
+\begin{bmatrix}
   \| \vec{x} \| \cdot \cos( \theta + \phi)
   \\
   \| \vec{x} \| \cdot \sin( \theta + \phi)
@@ -121,14 +121,14 @@ $$
   \begin{bmatrix}
   \| \vec{x} \| (\cos\phi \cos\theta - \sin\phi \sin\theta) 
   \\
-  \| \vec{x} \| (\sin\phi \cos\theta - \cos\phi \sin\theta)
+  \| \vec{x} \| (\sin\phi \cos\theta + \cos\phi \sin\theta)
   \end{bmatrix}
 $$
 $$
- \begin{bmatrix}
+\begin{bmatrix}
   \| \vec{x} \| (\cos\phi \cos\theta - \sin\phi \sin\theta) 
   \\
-  \| \vec{x} \| (\sin\phi \cos\theta - \cos\phi \sin\theta)
+  \| \vec{x} \| (\sin\phi \cos\theta + \cos\phi \sin\theta)
   \end{bmatrix}
   =
   \begin{bmatrix}
@@ -140,7 +140,7 @@ $$
   \end{bmatrix}
 $$
 $$
- \begin{bmatrix}
+\begin{bmatrix}
   \| \vec{x} \| \cos\phi \cdot \cos\theta - 
   \| \vec{x} \| \sin\phi \cdot \sin\theta
   \\
@@ -157,7 +157,7 @@ $$
   \end{bmatrix}
 $$
 
-Finally, by seperating out our original vector, we end up with the following representation:
+Finally, by separating out our original vector, we end up with the following representation:
 
 $$
 \begin{bmatrix} 
@@ -175,7 +175,7 @@ $$
 
 ## Translating Vectors
 
-Understanding each of these transformations involves progressivly building up more and more knowledge about our coordinate grid. Scaling involved looking at a few common conditions. Sheering invlovled figuring out how each element of the matrix was contributing to the matrix multiplication operation. And rotations involved us using these parts in unison with a different view of our grid system. Alghough this last transformation is geometrically simple, it forces us to consider the limitations of our grid system.  
+Understanding each of these transformations involves progressively building up more and more knowledge about our coordinate grid. Scaling involved looking at a few common conditions. Sheering involved figuring out how each element of the matrix was contributing to the matrix multiplication operation. And rotations involved us using these parts in unison with a different view of our grid system. Although this last transformation is geometrically simple, it forces us to consider the limitations denoted our grid system.  
 
 If we have a translation matrix, then we should be able to use it to translate any vector $\vec{x}$. This includes the zero vector, deonted by $\vec{0}$.
 $$
@@ -211,6 +211,6 @@ a & 0 & t_{x} \\
 \begin{bmatrix} a \cdot x + t_{x} \\ b \cdot y + t_{y} \\ 1 \end{bmatrix}
 $$
 
-The first time I saw this matrix, I thought it was complete magic! However, I recently discovered that this matrix can be thought of **two-dimensional shear of three-dimensional space**! For example, if I fan a deck of cards, I am essentially sheering the deck along its depth axis, all while the card simply moves along the top slice. This is the same thing the equation above is doing. It's sheering the third axis and displayiong the result in two dimension which intern looks identical to a translation.
+The first time I saw this matrix, I thought it was complete magic! However, I recently discovered that this matrix can be thought of **two-dimensional shear of three-dimensional space**! For example, if I fan a deck of cards, I am essentially sheering the deck along its depth axis, all while the card simply moves along the top slice. This is the same thing the equation above is doing. It's sheering the third axis and displaying the result in two dimension which intern looks identical to a translation.
 
 In my computer graphics course, these intuitions come up over and over again so it was worth taking some time to review them. After writing this post, I saw this other lovely exposition which I highly recommend. It even has the diagrams that this post lacks! [A Geometrical Understanding of Matrices](http://gregorygundersen.com/blog/2018/10/24/matrices/)
