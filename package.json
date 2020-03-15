@@ -33,7 +33,7 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.19.0",
-    "prettier": "^1.16.4"
+    "prettier": "^1.19.1"
   },
   "homepage": "https://github.com/viktree/scaling-enigma#readme",
   "keywords": [
