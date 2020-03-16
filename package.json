@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Vikram Venkataramanan <vikram.venkataramanan@mail.utoronto.ca>",
   "dependencies": {
-    "disqus-react": "^1.0.5",
+    "disqus-react": "^1.0.7",
     "gatsby": "^2.3.15",
     "gatsby-cli": "^2.5.5",
     "gatsby-plugin-google-fonts": "^0.0.4",
