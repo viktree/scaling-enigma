@@ -27,7 +27,7 @@
     "moment": "^2.24.0",
     "prismjs": "^1.16.0",
     "ramda": "^0.26.1",
-    "react": "^16.8.6",
+    "react": "^16.13.0",
     "react-dom": "^16.8.6",
     "react-vertical-timeline-component": "^2.5.0"
   },
