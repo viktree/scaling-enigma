@@ -6,10 +6,10 @@
   "dependencies": {
     "disqus-react": "^1.0.7",
     "gatsby": "^2.19.43",
-    "gatsby-cli": "^2.10.10",
+    "gatsby-cli": "^2.10.11",
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-manifest": "^2.2.47",
-    "gatsby-plugin-offline": "^2.2.10",
+    "gatsby-plugin-offline": "^3.0.5",
     "gatsby-plugin-sharp": "^2.4.12",
     "gatsby-plugin-stylus": "^2.1.22",
     "gatsby-remark-copy-linked-files": "^2.1.39",
@@ -26,9 +26,9 @@
     "katex": "^0.11.1",
     "moment": "^2.24.0",
     "prismjs": "^1.19.0",
-    "ramda": "^0.26.1",
+    "ramda": "^0.27.0",
     "react": "^16.13.0",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.13.0",
     "react-vertical-timeline-component": "^2.5.0"
   },
   "devDependencies": {
