@@ -26,7 +26,7 @@
     "katex": "^0.11.1",
     "moment": "^2.24.0",
     "prismjs": "^1.19.0",
-    "ramda": "^0.26.1",
+    "ramda": "^0.27.0",
     "react": "^16.13.0",
     "react-dom": "^16.8.6",
     "react-vertical-timeline-component": "^2.5.0"
