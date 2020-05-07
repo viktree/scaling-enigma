@@ -29,7 +29,8 @@
     "ramda": "^0.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.0",
-    "react-vertical-timeline-component": "^2.6.0"
+    "react-vertical-timeline-component": "^2.6.0",
+    "snyk": "^1.316.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -51,6 +52,9 @@
     "format": "prettier --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
     "start": "yarn develop",
-    "build": "gatsby build"
-  }
+    "build": "gatsby build",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
