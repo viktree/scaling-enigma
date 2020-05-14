@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: 'viktree',
     author: 'Vikram Venktaramanan',
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    description: 'my superawsome site',
     siteUrl: process.env.GATSBY_SITE_URL,
     disqusShortname: process.env.GATSBY_DISQUS_SHORTNAME,
     resources: {
@@ -40,28 +40,33 @@ module.exports = {
               strict: `ignore`,
             },
           },
-          'gatsby-remark-prismjs',
+          // {
+          //   resolve: `gatsby-remark-highlight-code`,
+          //   options: {
+          //     terminal: 'ubuntu',
+          //   },
+          // },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-reading-time',
           'gatsby-remark-smartypants',
+          'gatsby-remark-prismjs',
         ],
       },
     },
-    `gatsby-plugin-stylus`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby Starter Blog`,
         short_name: `GatsbyJS`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
         display: `standalone`,
-        icon: `src/assets/gatsby-icon.png`,
+        icon: `src/assets/avatar.png`,
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-stylus`,
+    `gatsby-remark-prismjs`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
   ],
 }

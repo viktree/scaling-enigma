@@ -82,7 +82,6 @@ To find out where OpenCV has been installed to, you need to start python and run
 ```
 
 
-
 Once you have this path, you can symlink your other installations of python to use the same binary.
 
 
