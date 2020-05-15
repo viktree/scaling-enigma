@@ -32,7 +32,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.0",
     "react-vertical-timeline-component": "^2.6.0",
-    "snyk": "^1.316.2"
+    "snyk": "^1.321.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
