@@ -26,7 +26,7 @@ Last week, while I was setting up my Jetson Nano, I compiled OpenCV from scratch
 
 Compiling OpenCV from scratch involved first generating a make file by running CMAKE with a whole slew of flags and then running make.
 
-```sh
+```bash
 # I prefer aria2c, but wget works just as well!
 $ aria2c https://github.com/opencv/opencv/archive/4.1.2.zip
 $ mv 4.1.2.zip opencv.zip

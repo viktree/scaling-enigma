@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import moment from 'moment'
 import { path } from 'ramda'
 import { DiscussionEmbed } from 'disqus-react'
 
@@ -17,7 +16,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = path(['markdownRemark'], data)
   const title = path(['frontmatter', 'title'], post)
   const date = path(['frontmatter', 'date'], post)
-  const formattedDate = moment(date).format('MMMM D, YYYY')
+  const readingTime = path(['fields', 'readingTime', 'text'], post)
 
   const { previous, next } = pageContext
 
@@ -31,10 +30,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <Layout location={location} title={siteTitle}>
         <div style={{ paddingLeft: '5%' }}>
           <h1>{title}</h1>
-          <p>{formattedDate}</p>
+          <p>
+            {date} | {readingTime}
+          </p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <br />
           <BlogPostNavigator nextPost={next} previousPost={previous} />
+          <br />
           <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </div>
       </Layout>

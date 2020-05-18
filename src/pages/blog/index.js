@@ -1,5 +1,4 @@
 import React from 'react'
-import moment from 'moment'
 import { Link, graphql } from 'gatsby'
 import { path } from 'ramda'
 
@@ -8,7 +7,9 @@ import Layout from '../../components/Layout'
 const ShowPost = ({ node }) => {
   const title = path(['frontmatter', 'title'], node) || node.fields.slug
   const date = path(['frontmatter', 'date'], node)
-  const formattedDate = moment(date).format('MMMM YYYY')
+  const readingTime =
+    path(['fields', 'readingTime', 'text'], node) || node.fields.slug
+
   return (
     <div key={node.fields.slug}>
       <h3>
@@ -16,7 +17,9 @@ const ShowPost = ({ node }) => {
           {title}
         </Link>
       </h3>
-      <small style={{ textTransform: 'uppercase' }}>{formattedDate}</small>
+      <small style={{ textTransform: 'uppercase' }}>
+        {date} | {readingTime}
+      </small>
       <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
       <br />
     </div>
@@ -46,9 +49,12 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY MMMM DD")
             title
           }
         }
