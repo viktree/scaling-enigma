@@ -48,31 +48,19 @@ const ResumeLink = () => {
 const Sidebar = () => (
   <div className="sidebar-container">
     <Toronto />
-    {/* <img */}
-    {/*   className="sidebar-avatar" */}
-    {/*   src="https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar.png" */}
-    {/*   onMouseEnter={e => */}
-    {/*     (e.currentTarget.src = */}
-    {/*       'https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar-hover.jpg') */}
-    {/*   } */}
-    {/*   onMouseOut={e => */}
-    {/*     (e.currentTarget.src = */}
-    {/*       'https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar.png') */}
-    {/*   } */}
-    {/* /> */}
+    <img
+      className="sidebar-avatar"
+      src="https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar.png"
+      onMouseEnter={e =>
+        (e.currentTarget.src =
+          'https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar-hover.jpg')
+      }
+      onMouseOut={e =>
+        (e.currentTarget.src =
+          'https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar.png')
+      }
+    />
     <div className="sidebar-main">
-      <img
-        className="sidebar-avatar"
-        src="https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar.png"
-        onMouseEnter={e =>
-          (e.currentTarget.src =
-            'https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar-hover.jpg')
-        }
-        onMouseOut={e =>
-          (e.currentTarget.src =
-            'https://github.com/viktree/scaling-enigma/raw/master/src/assets/avatar.png')
-        }
-      />
       <div className="sidebar-description">
         You have stumbled upon a little portion of the internet that I am
         carving out for myself!
