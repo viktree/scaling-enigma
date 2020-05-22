@@ -4,8 +4,11 @@
 $main-blue = #263238
 $accent-white= #e1e2e1
 $full-white = #ffffff
-$bleed-blue = #0086b3
+$bleed-blue = #66B6D1
 $bleed-green = #5bbd76
+$hover-yellow = #FCD581
+
+$large-screen-threshold = 480px
 
 .sidebar-container
   font-family: 'Bitter', serif
@@ -14,32 +17,42 @@ $bleed-green = #5bbd76
   height: 93%;
   text-decoration: none
   line-height: 1.5
+  font-size: 110%
 
   .sidebar-main
     padding-left: 1%
-    padding-right: 1%
-    width: 100%
+    padding-right: 10%
+    @media (min-width: $large-screen-threshold)
+      position: absolute
+      bottom: 15%
+
+  .sidebar-welcome
+    padding-left: 10%
 
   .sidebar-description
     color: $accent-white
     opacity: 0.75
+    font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace
     font-size: 80%
     padding-left: 10%
     padding-right: 10%
 
+
   .sidebar-uoft-link
     opacity: 1
-    color: $full-white
-
-  .sidebar-uoft-link:hover
     color: $bleed-blue
 
   .sidebar-ecobee-link
     opacity: 1
-    color: $full-white
-
-  .sidebar-ecobee-link:hover
     color: $bleed-green
+
+  .sidebar-uoft-link
+  .sidebar-ecobee-link
+    opacity: 1
+
+  .sidebar-uoft-link:hover
+  .sidebar-ecobee-link:hover
+    color: $hover-yellow
 
   .sidebar-toronto
     background-color: $accent-white
@@ -60,12 +73,10 @@ $bleed-green = #5bbd76
     padding-bottom: 3%
     padding-left: 12%
     padding-right: 10%
-  
+
   .sidebar-resume-link
     color: $accent-white
 
   .sidebar-resume-link:hover
-    color: yellow
-
   .sidebar-page-links:hover
-    color: yellow
+    color: $hover-yellow

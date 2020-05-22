@@ -13,32 +13,37 @@ const SidebarLink = ({ id, name, path }) => (
   </div>
 )
 
-const ResumeLink = () => (
-  <StaticQuery
-    query={graphql`
-      query SidebarQuery {
-        site {
-          siteMetadata {
-            resources {
-              resumeLink
-            }
+const ResumeLink = () => {
+  const resumeQuery = graphql`
+    query SidebarQuery {
+      site {
+        siteMetadata {
+          resources {
+            resumeLink
           }
         }
       }
-    `}
-    render={data => {
-      const metadata = path(['site', 'siteMetadata'], data)
-      const resumeLink = path(['resources', 'resumeLink'], metadata)
-      return (
-        <div key="resume" className="sidebar-page-links">
-          <a className="sidebar-resume-link" href={resumeLink}>
-            Resume
-          </a>
-        </div>
-      )
-    }}
-  />
-)
+    }
+  `
+  return (
+    <StaticQuery
+      query={resumeQuery}
+      render={data => {
+        const resumeLink = path(
+          ['site', 'siteMetadata', 'resources', 'resumeLink'],
+          data
+        )
+        return (
+          <div key="resume" className="sidebar-page-links">
+            <a className="sidebar-resume-link" href={resumeLink}>
+              Resume
+            </a>
+          </div>
+        )
+      }}
+    />
+  )
+}
 
 const Sidebar = () => (
   <div className="sidebar-container">
@@ -62,8 +67,10 @@ const Sidebar = () => (
       </div>
       <br />
       <br />
-      <ResumeLink />
-      {sidebarItems.map(SidebarLink)}
+      <div className="sidebar-links">
+        <ResumeLink />
+        {sidebarItems.map(SidebarLink)}
+      </div>
     </div>
   </div>
 )
