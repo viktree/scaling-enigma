@@ -26,17 +26,27 @@ $large-screen-threshold = 480px
       position: absolute
       bottom: 15%
 
-  .sidebar-welcome
-    padding-left: 10%
+  .sidebar-avatar
+    @media (max-width: $large-screen-threshold)
+      display: none
+    @media (min-width: $large-screen-threshold)
+      background-color: $accent-white
+      display: block
+      margin-left: auto
+      margin-right: auto
+      width: 35%
+      padding: 1%
+      border-radius: 50%
+      opacity: 0.90
 
   .sidebar-description
     color: $accent-white
     opacity: 0.75
     font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace
     font-size: 80%
-    padding-left: 10%
-    padding-right: 10%
-
+    padding: 10%
+    @media (max-width: $large-screen-threshold)
+      padding: 5% 10%
 
   .sidebar-uoft-link
     opacity: 1
@@ -59,6 +69,10 @@ $large-screen-threshold = 480px
     fill: $main-blue
     transform: scaleX(-1)
     width: 100%
+    @media (max-width: $large-screen-threshold)
+      padding-top: 0%
+      padding-bottom: 0%
+
 
   .sidebar-logo-container
     text-align: right
