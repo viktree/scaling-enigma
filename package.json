@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Vikram Venkataramanan <vikram.venkataramanan@mail.utoronto.ca>",
   "dependencies": {
-    "@deckdeckgo/highlight-code": "^1.0.5",
+    "@deckdeckgo/highlight-code": "^1.1.0",
     "disqus-react": "^1.0.8",
     "gatsby": "^2.20.16",
     "gatsby-cli": "^2.12.14",
