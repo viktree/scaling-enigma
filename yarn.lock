@@ -6684,11 +6684,6 @@ gatsby-page-utils@^0.2.7:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-google-fonts@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-0.0.4.tgz#dc1402a71f27c3ae6caee10777d10adadf74bd7c"
-  integrity sha512-B9Q+dznk6UX2Fe7QyCTptiuLT+ZLtdFBs1lg5kvaVDyIlesEA2rSQqtB7IkEQflH91JPE4eAEM699JCPy7CFGg==
-
 gatsby-plugin-manifest@^2.3.5:
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.3.5.tgz#fb46e8b4f2caaf174e5d8dd5ec5e0cbc8ef60df6"
@@ -14984,6 +14979,16 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typeface-bitter@^0.0.71:
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/typeface-bitter/-/typeface-bitter-0.0.71.tgz#bfd97a1b3a52c1275319ca169f92e3419c7abf8e"
+  integrity sha512-F8fJUCWtVTkgw2UfxaYOQt3lPsrmGKYiUC3ZOBcS88QuRpN0qd29s07o2q07vow2E+KP8LLuezbrZ/rTMw/XlQ==
+
+typeface-fira-code@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/typeface-fira-code/-/typeface-fira-code-1.1.4.tgz#ef36e81c43af0d01a69c15191da416467055d873"
+  integrity sha512-RInwMBx+jPn42hsPAzu6DWyoReLHximaMix5/brUJGPpthPs1QRH6qCXuUrndnLi1dqV551bb+qepudVygFDMQ==
 
 typescript@3.8.3:
   version "3.8.3"

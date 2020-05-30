@@ -19,12 +19,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Bitter`, `Abril Fatface`],
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -40,12 +34,6 @@ module.exports = {
               strict: `ignore`,
             },
           },
-          // {
-          //   resolve: `gatsby-remark-highlight-code`,
-          //   options: {
-          //     terminal: 'ubuntu',
-          //   },
-          // },
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
