@@ -27,6 +27,33 @@ h1, h2, h3, h4, h5, h6
   justify-content: space-between
   list-style: none
 
+// ********************************************************************************
+
+// Styleguide Nord - Polar Night
+$nord00 = #2e3440;
+$nord01 = #3b4252;
+$nord02 = #434c5e;
+$nord03 = #4c566a;
+
+// Styleguide Nord - Snow Storm
+$nord04 = #d8dee9;
+$nord05 = #e5e9f0;
+$nord06 = #eceff4;
+
+// Styleguide Nord - Frost
+$nord07 = #8fbcbb;
+$nord08 = #88c0d0;
+$nord09 = #81a1c1;
+$nord10 = #5e81ac;
+
+// Styleguide Nord - Aurora
+$nord11 = #bf616a;
+$nord12 = #d08770;
+$nord13 = #ebcb8b;
+$nord14 = #a3be8c;
+$nord15 = #b48ead;
+
+// ********************************************************************************
 
 /**
  * Based on copypasta from Remy Bach and Sarah Drasner,
@@ -34,7 +61,7 @@ h1, h2, h3, h4, h5, h6
  */
 code[class*='language-'],
 pre[class*='language-']
-	color: white
+	color: $nord04
 	background: none
 	font-family: Fira Code, monospace
 	font-variant-ligatures: contextual
@@ -58,25 +85,24 @@ pre[class*='language-']
 
 pre[class*='language-']::-moz-selection
 	/* Firefox */
-	background: hsl(207, 4%, 16%)
+	background: $nord00
 
 
 pre[class*='language-']::selection
 	/* Safari */
-	background: hsl(207, 4%, 16%)
-
+	background: $nord00
 
 /* Text Selection colour */
 pre[class*='language-']::-moz-selection,
 pre[class*='language-'] ::-moz-selection
 	text-shadow: none
-	background: hsla(0, 0%, 100%, 0.15)
+	background:  $nord01
 
 
 pre[class*='language-']::selection,
 pre[class*='language-'] ::selection
 	text-shadow: none
-	background: hsla(0, 0%, 100%, 0.15)
+	background: $nord01
 
 
 /* Inline code */
@@ -86,66 +112,64 @@ pre[class*='language-'] ::selection
 	padding: 0.15em 0.2em 0.05em
 	white-space: normal
 
-
 .token.attr-name
-	color: rgb(173, 219, 103)
+	color: $nord13
 	font-style: italic
 
 
 .token.comment
-	color: rgb(128, 147, 147)
+	color:  rgb(128, 147, 147)
 
 
 .token.string,
 .token.url
-	color: rgb(173, 219, 103)
+	color: $nord13
 
 
 .token.variable
-	color: rgb(214, 222, 235)
+	color: $nord05
 
 
 .token.number
-	color: rgb(247, 140, 108)
-
+	color: $nord12
 
 .token.builtin,
 .token.char,
 .token.constant,
 .token.function
-	color: rgb(130, 170, 255)
+	color: $nord10
 
 
 .token.punctuation
-	color: rgb(199, 146, 234)
+	color: $nord15
 
 
 .token.selector,
 .token.doctype
-	color: rgb(199, 146, 234)
+	color: $nord15
 	font-style: 'italic'
 
 
 .token.class-name
-	color: rgb(255, 203, 139)
+	color: $nord14
 
 
 .token.tag,
 .token.operator,
 .token.keyword
-	color: #ffa7c4
+	color: $nord09
 
 
 .token.boolean
-	color: rgb(255, 88, 116)
+	color: $nord07
 
 
 .token.property
-	color: rgb(128, 203, 196)
+	color: $nord08
 
 
 .token.namespace
-	color: rgb(178, 204, 214)
+	color: $nord04
 
 
 pre[data-line]
@@ -160,7 +184,7 @@ pre[data-line]
 	margin-left: -1.3125rem
 	padding-right: 1em
 	padding-left: 0.75em
-	border-left: 0.25em solid #ffa7c4
+	border-left: 0.25em solid $nord15
 
 
 .gatsby-highlight
