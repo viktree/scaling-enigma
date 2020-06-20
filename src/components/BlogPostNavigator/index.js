@@ -6,22 +6,26 @@ const getPostTitle = post => path(['frontmatter', 'title'], post)
 const getPostLink = post => path(['fields', 'slug'], post)
 
 const BlogPostNavigator = ({ nextPost, previousPost }) => (
-  <ul className="post-navigator">
-    <li>
-      {previousPost && (
-        <Link to={getPostLink(previousPost)} rel="prev" className="post-nav">
-          ← {getPostTitle(previousPost)}
-        </Link>
-      )}
-    </li>
-    <li>
-      {nextPost && (
-        <Link to={getPostLink(nextPost)} rel="next" className="post-nav">
-          {getPostTitle(nextPost)} →
-        </Link>
-      )}
-    </li>
-  </ul>
+	<span>
+		<br />
+		<ul className="post-navigator">
+			<li>
+				{previousPost && (
+					<Link to={getPostLink(previousPost)} rel="prev" className="post-nav">
+						← {getPostTitle(previousPost)}
+					</Link>
+				)}
+			</li>
+			<li>
+				{nextPost && (
+					<Link to={getPostLink(nextPost)} rel="next" className="post-nav">
+						{getPostTitle(nextPost)} →
+					</Link>
+				)}
+			</li>
+		</ul>
+		<br />
+	</span>
 )
 
 export default BlogPostNavigator
