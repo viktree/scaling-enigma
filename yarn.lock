@@ -6952,10 +6952,10 @@ gatsby-remark-copy-linked-files@^2.3.5:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-highlight-code@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-highlight-code/-/gatsby-remark-highlight-code-1.4.0.tgz#3ca02cbff52873b82f4250b16a2fea82c64537f1"
-  integrity sha512-g/XQdyDrOH3++zfciCHlIublRNs/vBPNyCbuP86C4qLn5L1AF25N29X3E/j9zdm0crg8pkJyQl9rsDE7PbAsnA==
+gatsby-remark-highlight-code@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-highlight-code/-/gatsby-remark-highlight-code-1.4.2.tgz#f7ebc10ec77ea36a1295db92016358a58df22dd1"
+  integrity sha512-EeZ95IbkwhXAu5B01LUNbA6k9J2ohzwZ/ytSNGkkdwCl3YAnYxWCEkgnnNT9d9s3TRLWODmGjmchIbyXeQKVYA==
   dependencies:
     gatsby-node-helpers "^0.3.0"
     lodash "^4.17.15"
