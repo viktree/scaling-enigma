@@ -14,25 +14,21 @@ html, body
 .sidebar, .content
   height: 100vh
 
-.content
-  padding: 5%
-
 @media (min-width: $large-screen-threshold)
   allocatePageFraction(amount)
-    "calc(100% / 12 * %s)" % amount
+    "calc(100% / 10 * %s)" % amount
 
-  $size-of-sidebar=3
+  $size-of-sidebar=2
 
   .sidebar
     position: fixed
     padding: 2%
-    font-size: 90%
     width:allocatePageFraction($size-of-sidebar)
 
   .content
     position: relative
     padding: 2%
-    padding-left: 7.5%
+    padding-left: 10%
     padding-right: 20%
     height: 80%
     margin-left: allocatePageFraction($size-of-sidebar)

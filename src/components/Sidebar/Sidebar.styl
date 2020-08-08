@@ -2,12 +2,12 @@
  * Set site colours
  */
 $main-blue = #263238
-$accent-white= #e1e2e1
+$accent-white = #e1e2e1
 $full-white = #ffffff
 $bleed-blue = #66B6D1
 $bleed-green = #5bbd76
 $bleed-red = #702021
-$hover-yellow = #FCD581
+$hover-yellow = #D5A021
 
 $large-screen-threshold = 480px
 
@@ -18,7 +18,7 @@ $large-screen-threshold = 480px
   height: 93%;
   text-decoration: none
   line-height: 1.5
-  font-size: 110%
+  // font-size: 110%
 
   .sidebar-main
     padding-left: 1%
@@ -32,25 +32,20 @@ $large-screen-threshold = 480px
       display: none
     @media (min-width: $large-screen-threshold)
       display: none
-      // background-color: $accent-white
-      // display: block
-      // margin-left: auto
-      // margin-right: auto
-      // width: 35%
-      // padding: 1%
-      // border-radius: 50%
-      // opacity: 0.90
 
   .sidebar-description
     color: $accent-white
     opacity: 0.75
-    font-family: PT Sans, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace
+    font-size: 1.5rem
+    font-family: PT Sans, Consolas, Courier New
     padding: 10%
+    padding-left: 15%
+    padding-right: 5%
 
   .sidebar-pv-link
     opacity: 1
     font-weight: 600
-    color: $full-white
+    color: $accent-white
 
   .sidebar-toronto
     background-color: $accent-white
@@ -67,17 +62,22 @@ $large-screen-threshold = 480px
       fill: $accent-white
 
   .sidebar-page-links
+    font-weight: 600
     opacity: 0.80
-    color: $accent-white
+    font-size: 1.2rem
+    color: $full-white
+
     padding-top: 3%
     padding-bottom: 3%
-    padding-left: 12%
-    padding-right: 10%
+    padding-left: 15%
+    padding-right: 5%
 
   .sidebar-resume-link
-    color: $accent-white
+    font-weight: 600
+    color: $full-white
 
   .sidebar-pv-link:hover
   .sidebar-resume-link:hover
   .sidebar-page-links:hover
+    font-weight: 600
     color: $hover-yellow
