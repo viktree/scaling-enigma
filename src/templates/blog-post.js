@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { path } from 'ramda'
 import { DiscussionEmbed } from 'disqus-react'
 
 import PageContext from '../contexts'
@@ -11,18 +10,18 @@ import 'katex/dist/katex.min.css'
 import './BlogPost.styl'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-	const metadata = path(['site', 'siteMetadata'], data)
+	const metadata = data?.site?.siteMetadata
 
-	const post = path(['markdownRemark'], data)
-	const title = path(['frontmatter', 'title'], post)
-	const date = path(['frontmatter', 'date'], post)
-	const readingTime = path(['fields', 'readingTime', 'text'], post)
+	const post = data?.markdownRemark
+	const title = post?.frontmatter?.title
+	const date = post?.frontmatter?.date
+	const readingTime = post?.fields?.readingTime?.text
 
 	const { previous, next } = pageContext
 
-	const siteTitle = path(['title'], metadata)
-	const disqusShortname = path(['disqusShortname'], metadata)
-	const identifier = path(['id'], post)
+	const siteTitle = metadata?.title
+	const disqusShortname = metadata?.disqusShortname
+	const identifier = post?.id
 	const disqusConfig = { identifier, title }
 
 	return (

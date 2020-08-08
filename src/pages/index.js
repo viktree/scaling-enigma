@@ -1,14 +1,12 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import { path } from 'ramda'
 
 import Layout from '../components/Layout'
 
 const ShowPost = ({ node }) => {
-	const title = path(['frontmatter', 'title'], node) || node.fields.slug
-	const date = path(['frontmatter', 'date'], node)
-	const readingTime =
-		path(['fields', 'readingTime', 'text'], node) || node.fields.slug
+	const title = node?.frontmatter?.title || node?.fields?.slug
+	const date = node?.frontmatter?.date
+	const readingTime = node?.fields?.readingTime?.text || node?.fields?.slug
 
 	return (
 		<div key={node.fields.slug}>
@@ -27,8 +25,8 @@ const ShowPost = ({ node }) => {
 }
 
 const BlogIndex = ({ data, location }) => {
-	const siteTitle = path(['site', 'siteMetadata', 'title'], data)
-	const posts = path(['allMarkdownRemark', 'edges'], data)
+	const siteTitle = data?.site?.siteMetadata?.title
+	const posts = data?.allMarkdownRemark?.edges
 
 	return (
 		<Layout location={location} title={siteTitle}>

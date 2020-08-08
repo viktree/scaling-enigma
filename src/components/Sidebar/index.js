@@ -1,6 +1,5 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
-import { path } from 'ramda'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Toronto from './toronto'
@@ -29,10 +28,7 @@ const ResumeLink = () => {
 		<StaticQuery
 			query={resumeQuery}
 			render={data => {
-				const resumeLink = path(
-					['site', 'siteMetadata', 'resources', 'resumeLink'],
-					data
-				)
+				const resumeLink = data?.site?.siteMetadata?.resources?.resumeLink
 				return (
 					<div key="resume" className="sidebar-page-links">
 						<a className="sidebar-resume-link" href={resumeLink}>

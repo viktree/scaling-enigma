@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { path } from 'ramda'
 
-const getPostTitle = post => path(['frontmatter', 'title'], post)
-const getPostLink = post => path(['fields', 'slug'], post)
+const getPostTitle = post => post?.frontmatter?.title
+const getPostLink = post => post?.fields?.slug
 
 const BlogPostNavigator = ({ nextPost, previousPost }) => (
 	<span>
