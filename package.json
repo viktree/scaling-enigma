@@ -5,7 +5,7 @@
   "author": "Vikram Venkataramanan <vikram.venkataramanan@mail.utoronto.ca>",
   "dependencies": {
     "@deckdeckgo/highlight-code": "^1.1.0",
-    "disqus-react": "^1.0.8",
+    "disqus-react": "^1.0.9",
     "gatsby": "^2.22.9",
     "gatsby-plugin-manifest": "^2.3.5",
     "gatsby-plugin-offline": "^3.2.16",
