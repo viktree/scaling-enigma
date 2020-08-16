@@ -29,7 +29,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-vertical-timeline-component": "^2.6.0",
-    "snyk": "^1.321.0",
+    "snyk": "^1.374.0",
     "typeface-bitter": "^0.0.71",
     "typeface-fira-code": "^1.1.4"
   },
